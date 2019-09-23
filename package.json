@@ -1,0 +1,15 @@
+{
+  "name": "osc2tuio-transmit",
+  "version": "1.0.0",
+  "author": "Tony Wu",
+  "description": "Receive osc(self-defined protocol about touch point) transmit to TUIO and send it",
+  "main": "transmit.js",
+  "dependencies": {
+    "node-osc": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node transmit.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
