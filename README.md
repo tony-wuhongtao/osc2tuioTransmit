@@ -1,20 +1,21 @@
-# node.js TUIOsimulator client
+# node.js OSC to TUIO transmit
 
-A simple client that sends TUIO style touch events to a listener on port 3333 of _localhost_.
+A simple transmit that receive OSC(port 4444) then Transmit to TUIO style touch events to a listener on port 3333 of _localhost_.
 
-This client creates an initial amount of Touches that move across the screen for a random lifespan. When one touch dies, a new touch is spawned. 
+We have a simulator OSC send programe created by TouchDesigner.
 
-This client is intended for debugging purposes for touch based applications. 
+
 
 Usage:
 
-1. _git clone https://github.com/labatrockwell/nodeTuioSimulator_
+1. _git clone https://github.com/tony-wuhongtao/osc2tuioTransmit_
 2. _npm install_
-3. _node client.js -**touchCount**- -**minimumDuration**- -**maximumDuration**-_
+3. _node transmit.js **receivedPort** **sendPort** **lifeSpan** **interval**_
+4. _Alternative start way: npm start -- **receivedPort** **sendPort** **lifeSpan** **interval**_
 
-***touchCount***      = the total number of touches 
 
-***minimumDuration*** = the minimum lifespan of a touch
+default [receivedPort=4444] [sendPort=3333] [lifeSpan=10] [interval=100]
+Untill get new points, the points lifetime = lifeSpan*interval (sm)
 
-***maximumDuratoin*** = the maximum lifespan of a touch
-
+## OSC self-define protocol
+/tuiomw/v1 id1,x1,y1,id2,x2,y2......

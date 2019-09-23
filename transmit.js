@@ -10,15 +10,14 @@ var touches = new Array();
 
 var touchIndexCounter = 0;
 
-var help 	= process.argv[2];
-var receivePort 	= process.argv[3];
-var sendPort = process.argv[4];
-var lifeSpan = process.argv[5];
-var interval = process.argv[6]; //sm
+var receivePort 	= process.argv[2];
+var sendPort = process.argv[3];
+var lifeSpan = process.argv[4];
+var interval = process.argv[5]; //sm
 
 var float_Eplison = 1.175494351e-38;
 
-if(help == "-h"){
+if(receivePort == "-h"){
 	console.log("transmit.js requires (3) arguments to run. Please re-run as follows:");
 	console.log("------------------------------------------------------------------------");
 	console.log("node transmit.js [receivedPort] [sendPort] [lifeSpan] [interval]");
